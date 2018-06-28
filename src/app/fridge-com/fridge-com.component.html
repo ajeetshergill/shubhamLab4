@@ -1,0 +1,22 @@
+
+<h2>Fridge App</h2>
+<table BORDER=5 BORDERCOLOR=RED>
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+  </tr>
+  <tr *ngFor="let x of angService.coolFridge.contents" (click)="select(x)" class="{{temp==x ? 'selected': ''}}">
+    <td>{{x.name}}</td>
+    <td>{{x.quantity}}</td>
+  </tr>
+ 
+ 
+</table>
+<input type="text" [(ngModel)]="temp.name">
+
+<input type="text" [(ngModel)]="temp.quantity">
+<div>
+  <input type="button" value="add" (click)="add()"> 
+ 
+  <input type="button" value="delete"  (click)="delete()"> 
+</div>

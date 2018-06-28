@@ -1,0 +1,39 @@
+<p>
+  recipe-com works!
+</p>
+<h2>Recipe App</h2>
+<table BORDER=5 BORDERCOLOR=yellow>
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    
+  </tr>
+
+  <tr *ngFor="let x of angService.capriceSalad.ingredientArray" (click)="select(x)" class="{{temp==x ? 'selected': ''}}">
+    <td>{{x.name}}</td>
+    <td>{{x.quantity}}</td>
+    <td>ff</td>
+  </tr>
+  
+  <br>
+  <tr>
+    <th>Instructions</th>
+    <th>Time</th>
+  </tr>
+  <tr>
+      <td>{{angService.capriceSalad.instructions}}</td>
+      <td>{{angService.capriceSalad.time}}</td>
+  </tr>
+
+</table>
+
+
+<div>
+    <input type="text" [(ngModel)]="temp.name" placeholder="name">
+    <input type="text" [(ngModel)]="temp.quantity" placeholder="quantity">
+    <input type="button" value="add" (click)="addIngr()"> 
+</div>
+
+<input type="text" [(ngModel)]="temp2.name" placeholder="instructions">
+<input type="text" [(ngModel)]="temp3.name" placeholder="time">
+<input type="button" value="Create Recipe" (click)="addRec()"> 
